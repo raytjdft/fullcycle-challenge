@@ -14,7 +14,7 @@ const dbConfig = {
 
 // Generate random name
 const getRandomName = () => {
-    const names = ['John', 'Jane', 'Alice', 'Bob', 'Charlie', 'Diana'];
+    const names = ['Ray', 'Flávio', 'Liz', 'Carlos', 'Adriana', 'Fernanda'];
     return names[Math.floor(Math.random() * names.length)];
 };
 
