@@ -20,7 +20,8 @@ services:
       - ./app:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - MYSQL_HOST=db
       - MYSQL_USER=root
@@ -37,6 +38,12 @@ services:
     volumes:
       - db-data:/var/lib/mysql
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     networks:
       - app-network
 

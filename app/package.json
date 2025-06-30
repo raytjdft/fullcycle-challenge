@@ -1,7 +1,7 @@
 {
-  "name": "fullcycle-challenge",
-  "version": "1.0.0",
-  "description": "Node.js app with MySQL and Nginx",
+  "name": "fullcycle-desafio",
+  "version": "1.2.0",
+  "description": "Node.js app com th MySQL e Nginx",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
